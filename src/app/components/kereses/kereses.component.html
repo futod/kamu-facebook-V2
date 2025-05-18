@@ -1,0 +1,12 @@
+<div class="kereses-container">
+  <h2>Komplex lekérdezések eredményei</h2>
+  
+  <div *ngFor="let eredmeny of eredmenyek" class="kereses-blokk">
+    <h3>{{ eredmeny.cim }}</h3>
+    <div *ngFor="let post of eredmeny.adatok" class="post">
+      <p><strong>Cím:</strong> {{ post.cim }}</p>
+      <p><strong>Szerző:</strong> {{ post.szerzo }}</p>
+      <p><strong>Dátum:</strong> {{ post.datum.toDate() | date:'short' }}</p>
+    </div>
+  </div>
+</div>

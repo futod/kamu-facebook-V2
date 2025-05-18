@@ -1,0 +1,22 @@
+<div class="post-form">
+  <h2>Új bejegyzés</h2>
+
+  <form (ngSubmit)="bejegyzesBekuldese()">
+    <label>
+      Cím:
+      <input type="text" [(ngModel)]="ujBejegyzes.cim" name="cim" required>
+    </label>
+
+    <label>
+      Tartalom:
+      <textarea [(ngModel)]="ujBejegyzes.tartalom" name="tartalom" required></textarea>
+    </label>
+
+    <label>
+      Szerző:
+      <input type="text" [(ngModel)]="ujBejegyzes.szerzo" name="szerzo" required>
+    </label>
+
+    <button type="submit">Mentés</button>
+  </form>
+</div>

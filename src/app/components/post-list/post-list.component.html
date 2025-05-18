@@ -1,0 +1,13 @@
+<div class="post-list">
+  <h2>Bejegyzések</h2>
+  <div *ngFor="let post of posts" class="post-item">
+    <h3>{{ post.cim }}</h3>
+    <p>{{ post.tartalom | szovegRovidites:150 }}</p>
+    <p class="datum">{{ post.datum | relativeTime }}</p>
+    <p><strong>Szerző:</strong> {{ post.szerzo }}</p>
+    <p><em>{{ post.datum | date:'short' }}</em></p>
+
+    <!-- 🗑️ Törlés gomb -->
+    <button (click)="torles(post.id)">🗑️ Törlés</button>
+  </div>
+</div>

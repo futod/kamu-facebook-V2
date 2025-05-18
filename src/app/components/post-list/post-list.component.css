@@ -1,0 +1,69 @@
+.post-list {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.post-item {
+  background-color: #f5f6f7;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.post-item:hover {
+  transform: scale(1.02);
+}
+
+.post-item h3 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.post-item p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.post-item .datum {
+  font-size: 0.8rem;
+  color: #777;
+  font-style: italic;
+}
+
+button {
+  margin-top: 0.7rem;
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+.szerkeszto-form {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.szerkeszto-form input,
+.szerkeszto-form textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}

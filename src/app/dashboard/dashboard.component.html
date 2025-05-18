@@ -1,0 +1,36 @@
+<div class="dashboard">
+  <header class="header">
+    <button class="menu-button" (click)="oldalMenuNyitva = !oldalMenuNyitva">
+      <mat-icon>{{ oldalMenuNyitva ? 'close' : 'menu' }}</mat-icon>
+    </button>
+
+    <div class="logo">Kamu Facebook</div>
+
+    <div class="profil-container" (click)="toggleMenu()">
+      <span matBadge="{{ uzenetekSzama }}" matBadgeColor="warn" matBadgePosition="above before" class="badge-icon">
+        <mat-icon>mail</mat-icon>
+      </span>
+      <img [src]="profilKep" alt="Profilkép" class="profilkep" [class.zoom]="menuNyitva" />
+      <div class="menu" *ngIf="menuNyitva">
+        <p>{{ felhasznaloNev }}</p>
+        <button (click)="kijelentkezes()">Kijelentkezés</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="sidenav" [class.open]="oldalMenuNyitva">
+    <a routerLink="/dashboard">Főoldal</a>
+    <a routerLink="kereses">Lekérdezések</a>
+    <a routerLink="bejegyzesek">Bejegyzések</a>
+    <a routerLink="uj-bejegyzes">Új bejegyzés</a>
+  </nav>
+
+  <main class="main-content">
+    <div>
+    
+     
+    </div>
+
+    <router-outlet></router-outlet>
+  </main>
+</div>

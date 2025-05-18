@@ -1,0 +1,60 @@
+<div class="form-container mat-elevation-z4">
+  <h1>facebook</h1>
+  <h2>Hozz létre egy fiókot</h2>
+
+  <form [formGroup]="regisztraciosUrlap" (ngSubmit)="kuldes()">
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="full-width">
+        <input matInput placeholder="Keresztnév" formControlName="keresztnev" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <input matInput placeholder="Vezetéknév" formControlName="vezeteknev" />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nap</mat-label>
+        <mat-select formControlName="nap">
+          <mat-option *ngFor="let n of napok" [value]="n">{{ n }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Hónap</mat-label>
+        <mat-select formControlName="honap">
+          <mat-option *ngFor="let h of honapok; let i = index" [value]="i + 1">{{ h }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Év</mat-label>
+        <mat-select formControlName="ev">
+          <mat-option *ngFor="let e of evek" [value]="e">{{ e }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-radio-group formControlName="nem" class="gender">
+      <mat-radio-button value="Nő">Nő</mat-radio-button>
+      <mat-radio-button value="Férfi">Férfi</mat-radio-button>
+      <mat-radio-button value="Egyedi">Egyedi</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <input matInput type="email" placeholder="E-mail cím vagy telefonszám" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <input matInput type="password" placeholder="Új jelszó" formControlName="jelszo" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!regisztraciosUrlap.valid">
+      Regisztráció
+    </button>
+  </form>
+
+  <p class="belepes-link" (click)="visszaALepeoldalra()">Már van fiókod?</p>
+</div>
